@@ -39,6 +39,6 @@ jobs:
           coverage report -m
     - name: Cambiar a master
       run: |
-        checkout master
+        git checkout master
     - name: Hacer merge
-      run: merge feature1
+      run: git merge feature1
