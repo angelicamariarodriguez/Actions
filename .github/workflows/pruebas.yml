@@ -10,7 +10,7 @@ jobs:
       salida: ${{ steps.imprimir.outputs.respuesta }}
     steps:
     - name: Checkout de repositorio
-      uses: actions/checkout@feature1
+      uses: actions/checkout@v2
     - name: Configuración de entorno de python
       uses: actions/setup-python@v2
       with:
