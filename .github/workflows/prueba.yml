@@ -38,7 +38,7 @@ jobs:
           coverage run -m unittest tests/test_persona.py
           coverage report -m
   merge-branch:
-    name: Automerge
+    name: Merge
     needs: job1
     runs-on: ubuntu-latest
     steps:
