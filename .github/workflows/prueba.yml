@@ -1,7 +1,7 @@
 name: Pruebas unitarias
 on:
   push:
-    branches: [ master ]
+    branches: [ feature1 ]
 jobs:
   job1:
     name: Pruebas
@@ -37,13 +37,17 @@ jobs:
       run: |
           coverage run -m unittest tests/test_persona.py
           coverage report -m
-  automerge:
+  merge-branch:
     name: Automerge
     needs: job1
     runs-on: ubuntu-latest
     steps:
-      - name: automerge
-        uses: "pascalgn/automerge-action@4536e8847eb62fe2f0ee52c8fa92d17aa97f932f"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: ""
+      - name: checkout master
+      - uses: actions/checkout@master
+      
+      - name: merge
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: master
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
