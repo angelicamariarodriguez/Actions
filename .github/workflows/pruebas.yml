@@ -37,3 +37,8 @@ jobs:
       run: |
           coverage run -m unittest tests/test_persona.py
           coverage report -m
+    - name: Cambiar a master
+      run: |
+        checkout master
+    - name: Hacer merge
+      run: merge feature1
