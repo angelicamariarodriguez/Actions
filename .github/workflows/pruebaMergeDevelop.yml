@@ -9,7 +9,7 @@ on:
       - ready_for_review
       - reopened
       - unlocked
-    branches: [ feature1 ]
+    branches: [ feature3 ]
 
 jobs:
   job1:
